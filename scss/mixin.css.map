@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AC6BA,kCAAkC;AAyLlC,2CAA2C",
+    "sources": [
+        "mixin.scss",
+        "mixins-helpers.scss",
+        "mixins-project.scss"
+    ],
+    "names": [],
+    "file": "mixin.css"
+}

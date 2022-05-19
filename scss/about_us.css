@@ -1,0 +1,91 @@
+.about_us {
+  margin: 150px 0 100px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  position: relative;
+}
+
+.block_title {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: black;
+  text-shadow: 1px 1px 3px black;
+}
+
+.block-text {
+  font-weight: 500;
+  line-height: 140%;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.text:not(:last-child) {
+  margin: 20px 0 20px 0;
+}
+
+@media (max-width: 997px) {
+  .text:not(:last-child) {
+    margin: 30px 0;
+  }
+}
+
+.contacts {
+  width: 100%;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.block-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.information {
+  background-color: white;
+  -webkit-box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.333%;
+          flex: 0 1 33.333%;
+  font-size: 20px;
+  color: #afa8a8;
+  padding: 20px 0;
+}
+
+@media (min-width: 670.02px) {
+  .information:not(:last-child) {
+    border-right: solid 1px black;
+  }
+}
+
+@media (max-width: 670px) {
+  .information {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    margin: 0 0 20px 0;
+    padding: 15px 0;
+  }
+}
+/*# sourceMappingURL=about_us.css.map */

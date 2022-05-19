@@ -1,0 +1,315 @@
+    @import "mixin"; //-----------------map------------------\\
+    .definition_japan {
+        position: relative;
+        margin: 150px 0 40px 0;
+    }
+    
+    .block-defenition {
+        display: flex;
+    }
+    
+    .block-defenition_text {
+        padding: 15px 0 15px 0;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 152%;
+    }
+    
+    .block-defenition_map {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+        min-width: 600px;
+    }
+    
+    @media (max-width:772px) {
+        .block-defenition_map {
+            min-height: 300px;
+            min-width: 300px;
+        }
+        .block-defenition_text {
+            font-size: 16px;
+        }
+    }
+    
+    .map {
+        @include block-border;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    //------------------general_information-----------------------\\
+    .general_information {
+        margin: 20px 0 20px 0;
+        display: flex;
+    }
+    
+    .block-information {
+        display: flex;
+    }
+    
+    .block-information_title {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 140%;
+        margin-bottom: 10px;
+        text-align: start;
+    }
+    
+    .block-information_text1 {
+        flex: 1 1 50%;
+    }
+    
+    .block-information_text2 {
+        flex: 1 1 100%;
+    }
+    
+    .text-information {
+        margin: 0;
+        font-size: 18px;
+        line-height: 140%;
+        font-weight: 500;
+    }
+    
+    .block-information_image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 50%;
+    }
+    
+    .information_image {
+        @include block-border;
+        min-width: 350px;
+        max-height: 450px;
+    }
+    
+    @media (max-width:992px) {
+        .text-information {
+            font-size: 16px;
+        }
+        .block-information_title {
+            font-size: 24px;
+        }
+        .information_image {
+            margin-left: 5px;
+            min-width: 0px;
+            max-width: 300px;
+            max-height: 400px;
+        }
+    }
+    
+    @media (max-width:752px) {
+        .information_image {
+            min-width: 0;
+            max-width: 200px;
+            max-height: 300px;
+        }
+        .text-information {
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width:752px) {
+        .information_image {
+            min-width: 0;
+            max-width: 150px;
+            max-height: 250px;
+        }
+        .text-information {
+            font-size: 10px;
+        }
+    }
+    
+    //------------------japan_towers----------------------\\
+    .block-towers_elements {
+        padding: 0 30px 0 0;
+        display: flex;
+        margin-bottom: 50px;
+    }
+    
+    .element-tower {
+        border-radius: 4px;
+        border: 1px solid grey;
+        margin: 5px 10px;
+        flex: 1 0 33.33%;
+        height: 380px;
+        position: relative;
+        box-shadow: 1px 4px 1px rgba(6, 6, 6, 0.14);
+        overflow: hidden;
+    }
+    
+    .element-tower_info {
+        letter-spacing: 0.3px;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgb(35, 9, 35);
+        opacity: 0.6;
+        padding: 1px 30px;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .element-tower_title {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 600;
+        color: white;
+        line-height: 140%;
+    }
+    
+    .element-tower_subtitle {
+        color: white;
+        font-size: 15px;
+        line-height: 130%;
+    }
+    
+    .element-tower_image {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .element-tower:hover {
+        opacity: 0.85;
+    }
+    
+    @media (max-width:1024px) {
+        .element-tower_title {
+            font-size: 18px;
+        }
+        .element-tower_subtitle {
+            font-size: 12px;
+        }
+        .element-tower {
+            margin: 3px 7px;
+            height: 280px;
+        }
+    }
+    
+    @media (max-width:772px) {
+        .element-tower_title {
+            font-size: 16px;
+        }
+        .element-tower_subtitle {
+            font-size: 10px;
+        }
+        .element-tower {
+            height: 240px;
+        }
+    }
+    
+    @media (max-width:550px) {
+        .element-tower_title {
+            font-size: 14px;
+        }
+        .element-tower_subtitle {
+            font-size: 8px;
+        }
+        .element-tower {
+            height: 180px;
+        }
+    }
+    
+    @media (max-width:450px) {
+        .element-tower_title {
+            font-size: 14px;
+        }
+        .element-tower_subtitle {
+            font-size: 5px;
+        }
+        .element-tower {
+            height: 120px;
+        }
+    }
+    
+    //---------------main-sights-------------------------\\
+    .main_sights {
+        margin: 100px 0 100px 0;
+        padding: 0 20px;
+        display: flex;
+    }
+    
+    .block-sights {}
+    
+    .sight:not(:last-child) {
+        margin: 0 0 100px 0;
+    }
+    
+    .sight {
+        flex: 1 1 100%;
+        position: relative;
+        letter-spacing: 0.3px;
+        line-height: 152%;
+    }
+    
+    .sight_title_left {
+        margin: 10px 0 20px 25%;
+    }
+    
+    .sight_title {
+        font-size: 32px;
+        font-weight: 500;
+    }
+    
+    .sight_title_right {
+        margin: 10px 25% 20px 0px;
+        text-align: end;
+    }
+    
+    .sight_text {
+        font-size: 18px;
+        font-weight: 300;
+    }
+    
+    .sight_image_right {
+        float: right;
+    }
+    
+    .sight_image_left {
+        float: left;
+    }
+    
+    .sight_image {
+        max-width: 550px;
+        max-height: 500px;
+        @include block-border;
+        margin: 0px 30px 30px 10px;
+    }
+    
+    @media (max-width:1024px) {
+        .sight_image {
+            max-width: 350px;
+            max-height: 250px;
+        }
+        .sight_text {
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width:750px) {
+        .sight_image {
+            max-width: 300px;
+            max-height: 250px;
+        }
+        .sight_text {
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width:650px) {
+        .sight_image {
+            max-width: 270px;
+            max-height: 200px;
+        }
+        .sight_text {
+            font-size: 14px;
+        }
+        .sight_title {
+            text-align: center;
+            margin: 0 0 10px 0;
+        }
+    }

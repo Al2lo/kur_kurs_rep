@@ -1,0 +1,32 @@
+@import "mixin";
+//fonts &  variables\\
+$fontFamily:"Montserrat";
+$fontSize:16;
+$minWidth:320px;
+$maxWidth:1440;
+$maxWidthContainer:1270;
+$md1:$maxWidthContainer+12px;
+$md2:991.98px;
+$md3:767.98px;
+$md4:479.98px;
+$mainColor:black;
+//-----------------\\
+//-----Обнуление----------////
+@import"begining";
+//-------------------//
+//////-------body------------//
+//Основная сеька-----------//
+.wrapper {
+    background-color: rgb(249, 246, 247);
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@import "tours";
+@import"about_Japan";
+@import "header";
+@import"about_us";
+@import "main";
+@import "footer";

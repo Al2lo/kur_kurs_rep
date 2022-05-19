@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tours [
+<!ELEMENT tours (tour, title, picture, cost)>
+<!ELEMENT tour (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT picture (#PCDATA)>
+<!ELEMENT cost (#PCDATA)>
+<!ENTITY form "tours">
+]>
+<tours>
+<tour id="1">
+<title>Легенды и огни Токио</title>
+<picture>../Hanabi.jpg</picture>
+<cost>€ 230</cost>
+</tour>
+<tour id="2">
+<title>Легенды и огни Токио + Никко. Сакура</title>
+<picture>../Rainbow_Bridge.jpg</picture>
+<cost>€ 300</cost>
+</tour>
+<tour id="3">
+<title>Киото — погружение в истинную Японию</title>
+<picture>../tour_img3.jpg</picture>
+<cost>€ 350</cost>
+</tour>
+<tour id="4">
+<title>Самобытная Канадзава</title>
+<picture>../slider_image3.jpg</picture>
+<cost>2300-4300</cost>
+</tour>
+<tour id="5">
+<title>karpats</title>
+<picture>../img/karpatsm.png</picture> 
+<cost>€ 350</cost>
+</tour>
+<tour id="6">
+<title>Путешествие в национальный парк Фудзи-Хаконе-Идзу</title>
+<picture>../tour_img4.webp</picture>
+<cost> € 500</cost>
+</tour>
+<tour id="7">
+<title>Целебные воды Хаконе</title>
+<picture>../tour_img5.jpg</picture>
+<cost>€ 233</cost>
+</tour>
+<tour id="8">
+<title>Прекрасное Никко </title>
+<picture>../tour_img6.jpg</picture>
+<cost>€ 350</cost>
+</tour>
+<tour id="9">
+<title>Очарование южного Токио </title>
+<picture>../tour_img7.jpg</picture>
+<cost>€ 170</cost>
+</tour>
+<tour id="10">
+<title>Прогулка по Токийскому нижнему городу</title>
+<picture>../tour_img8.jpg</picture>
+<cost>€ 180</cost>
+</tour>
+<tour id="11">
+<title>Влюбиться в Токио за один день!</title>
+<picture>../tour_img9.jpg</picture>
+<cost>€ 180</cost>
+</tour>
+<tour id="12">
+<title>Десерты по-токийски: маття и с чем его едят</title>
+<picture>../tour_img10.jpg</picture>
+<cost>€ 272</cost>
+</tour>
+<tour id="13">
+<title>Префектура Мияги. Красоты глухого уголка Японии</title>
+<picture>../tour_img11.jpg</picture>
+<cost>.€ 270</cost>
+</tour>
+</tours>

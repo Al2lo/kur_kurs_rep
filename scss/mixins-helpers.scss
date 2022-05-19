@@ -1,0 +1,390 @@
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin box-sizing($boxmodel) {
+    -webkit-box-sizing: $boxmodel;
+    -moz-box-sizing: $boxmodel;
+    box-sizing: $boxmodel;
+}
+
+@mixin img-responsive($display: block) {
+    display: $display;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+@mixin inlineblock ($valine: top) {
+    display: inline-block;
+    vertical-align: $valine;
+}
+
+
+/* --------- centered --------- */
+
+@mixin absolute-center {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+}
+
+@mixin tab-focus() {
+    // Default
+    outline: thin dotted;
+    // WebKit
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+// nav
+@mixin navlink {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0;
+    padding-bottom: 5px;
+    @include transition;
+    &:hover {
+        color: $nav-hover;
+        text-decoration: none;
+    }
+    &:active {
+        color: $nav-focus;
+    }
+    &.active {
+        border-bottom: 2px solid #EB565C;
+    }
+}
+
+@mixin nav-divider($color: #e5e5e5) {
+    height: 1px;
+    margin: (($line-height-computed / 2) - 1) 0;
+    overflow: hidden;
+    background-color: $color;
+}
+
+@mixin link ($normal, $hover, $focus, $opacity: "") {
+    @if ($opacity !="") {
+        & {
+            color: $normal;
+            &:hover {
+                color: $hover;
+            }
+            &:focus {
+                color: $normal;
+                @include opacity($opacity);
+            }
+        }
+    }
+    @else {
+        & {
+            color: $normal;
+            &:hover {
+                color: $hover;
+            }
+            &:focus {
+                color: $focus;
+            }
+        }
+    }
+}
+
+@mixin bg-variant( $bg-color, $bg-hover, $bg-focus, $opacity: "") {
+    @if ($opacity !="") {
+        & {
+            background-color: $bg-color;
+        }
+        &:hover {
+            background-color: $bg-hover;
+        }
+        &:focus {
+            background-color: $bg-focus;
+            @include opacity($opacity);
+        }
+    }
+    @else {
+        & {
+            background-color: $bg-color;
+        }
+        &:hover {
+            background-color: $bg-hover;
+        }
+        &:focus {
+            background-color: $bg-focus;
+        }
+    }
+}
+
+@mixin border-color ($normal, $hover, $focus, $opacity: "") {
+    @if ($opacity !="") {
+        & {
+            border-color: $normal;
+            &:hover {
+                border-color: $hover;
+            }
+            &:focus {
+                border-color: $normal;
+                @include opacity($opacity);
+            }
+        }
+    }
+    @else {
+        & {
+            border-color: $normal;
+            &:hover {
+                border-color: $hover;
+            }
+            &:focus {
+                border-color: $focus;
+            }
+        }
+    }
+}
+
+@mixin linkborder( $bd-color, $bd-hover, $bd-focus, $normal, $hover, $focus, $bdst-color, $bdst-hover, $bdst-focus) {
+    & {
+        color: $normal;
+        border-bottom: 1px $bd-color $bdst-color;
+    }
+    &:hover {
+        color: $hover;
+        border-bottom: 1px $bd-hover $bdst-hover;
+    }
+    &:focus {
+        color: $focus;
+        border-bottom: 1px $bd-focus $bdst-focus;
+    }
+}
+
+@mixin tdn() {
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+@mixin list-clear() {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+@mixin placeholder($color: #000, $font-weight:normal, $text-transform: none) {
+     ::-moz-placeholder {
+        color: $color;
+        font-weight: $font-weight;
+        text-transform: $text-transform;
+        opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+    }
+     :-ms-input-placeholder {
+        color: $color;
+        font-weight: $font-weight;
+        text-transform: $text-transform;
+    }
+     ::-webkit-input-placeholder {
+        color: $color;
+        font-weight: $font-weight;
+        text-transform: $text-transform;
+    }
+}
+
+@mixin text-overflow {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+
+/* --------- responsive mixins --------- */
+
+@mixin desktop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phones {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: linear-gradient(top, $startColor, $endColor);
+}
+
+@mixin background-horizontal($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: linear-gradient(left, $startColor, $endColor);
+}
+
+@mixin background-radial($startColor: #FFFFFF, $startPos: 0%, $endColor: #000000, $endPos:100%) {
+    background: radial-gradient(ellipse at center, $startColor $startPos, $endColor $endPos);
+}
+
+@mixin background-opacity($color: #000, $opacity: 0.85) {
+    background: $color;
+    background: rgba($color, $opacity);
+}
+
+@mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px) {
+    border-top-left-radius: $topLeftRadius;
+    border-top-right-radius: $topRightRadius;
+    border-bottom-right-radius: $bottomRightRadius;
+    border-bottom-left-radius: $bottomLeftRadius;
+}
+
+@mixin box-rgba($r: 60, $g: 3, $b: 12, $opacity: 0.23, $color: #3C3C3C) {
+    background-color: transparent;
+    background-color: rgba($r, $g, $b, $opacity);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}', endColorstr='#{$color}');
+    zoom: 1;
+}
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4), $inset: "") {
+    @if ($inset !="") {
+        box-shadow: $inset $x $y $blur $color;
+    }
+    @else {
+        box-shadow: $x $y $blur $color;
+    }
+}
+
+@mixin double-borders($colorOne: #3C3C3C, $colorTwo: #999999, $radius: 0) {
+    border: 1px solid $colorOne;
+    box-shadow: 0 0 0 1px $colorTwo;
+    border-radius: $radius;
+}
+
+@mixin font-face($fontFamily: myFont, $eotFileSrc: 'myFont.eot', $woffFileSrc: 'myFont.woff', $ttfFileSrc: 'myFont.ttf', $svgFileSrc: 'myFont.svg', $svgFontID: '#myFont') {
+    font-family: $fontFamily;
+    src: url($eotFileSrc) format('eot'), url($woffFileSrc) format('woff'), url($ttfFileSrc) format('truetype'), url($svgFileSrc + $svgFontID) format('svg');
+}
+
+@mixin opacity($opacity: 0.5) {
+    $opacityMultiplied: ($opacity * 100);
+    opacity: $opacity;
+}
+
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+    transform: rotate($deg + deg);
+    filter: progid:DXImageTransform.Microsoft.Matrix( M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+    zoom: 1;
+}
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+@mixin transform($params) {
+    transform: $params;
+}
+
+@mixin transform-origin($params) {
+    transform-origin: $params;
+}
+
+@mixin transform-style($style: preserve-3d) {
+    transform-style: $style;
+}
+
+@mixin transition($properties...) {
+    @if length($properties)>=1 {
+        transition: $properties;
+    }
+    @else {
+        transition: all 0.2s ease-in-out 0s;
+    }
+}
+
+@mixin triple-borders($colorOne: #3C3C3C, $colorTwo: #999999, $colorThree: #000000, $radius: 0) {
+    border: 1px solid $colorOne;
+    border-radius: $radius;
+    box-shadow :0 0 0 1px #{$colorTwo},
+    0 0 0 2px #{$colorThree};
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+/// Animation
+/// @param {*} $str - name duration timing-function delay iteration-count direction fill-mode play-state ([http://www.w3schools.com/cssref/css3_pr_animation.asp](http://www.w3schools.com/cssref/css3_pr_animation.asp))
+/// @require {mixin} css3-prefix
+@mixin animation($str) {
+    @include css3-prefix('animation', $str);
+}
+
+//Адаптивное св-во
+$maxWidth:1920;
+$maxWidthContainer:1170;
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if &type==1 {
+        //Если меньше контейнера
+        #{$property}: $startSize+px;
+        @media (max-width:#{$maxWidthContainer+px}) {
+            #{$property}:calc(#{$minSize+px} + #{$addSize} * ((100vw - 320px)/#{$maxWidthContainer} - 320));
+        }
+    }
+    @else if $type==2 {
+        //Если больше контейнера
+        #{$property}: $startSize+px;
+        @media (min-width:#{$maxWidthContainer+px}) {
+            #{$property}:calc(#{$minSize+px} + #{$addSize} * ((100vw - 320px)/#{$maxWidth - 320}));
+        }
+    }
+    @else {
+        //Всегда
+        #{$property}:calc(#{$minSize+px} + #{$addSize} * ((100vw - 320px)/#{$maxWidth - 320}));
+    }
+}
+
+@mixin block-border {
+    border-radius: 20px;
+    border: solid 2px black;
+}

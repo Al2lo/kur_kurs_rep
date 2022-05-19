@@ -1,0 +1,33 @@
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.header_wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.header_body {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  min-height: 125px;
+}
+.header_main {
+  display: flex;
+  align-items: center;
+  flex: 0 0 39.8387096774%;
+}
+.header_logo {
+  color: black;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120.8333333333%;
+}
+.menu {
+  flex: 0 1 420px;
+}
